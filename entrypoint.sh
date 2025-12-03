@@ -14,6 +14,18 @@ elif [ "$SERVICE_MODE" = "bot" ]; then
 		export BOT_TOKEN=$(head -n1 /app/token.txt)
 	fi
 	exec python -m app.bot
+elif [ "$SERVICE_MODE" = "market_data_producer" ]; then
+	echo "📡 Starting Market Data Producer (Phase 1-2)"
+	exec python app/producers/market_data_producer.py
+elif [ "$SERVICE_MODE" = "ml_predictor" ]; then
+	echo "🧠 Starting ML Predictor (Phase 3)"
+	exec python app/consumers/ml_predictor.py
+elif [ "$SERVICE_MODE" = "backtrader_engine" ]; then
+	echo "🤖 Starting Backtrader Trading Engine (Phase 5)"
+	exec python app/consumers/backtrader_engine.py
+elif [ "$SERVICE_MODE" = "backtrader_dashboard" ]; then
+	echo "📊 Starting Backtrader Dashboard (Phase 5)"
+	exec streamlit run app/dashboard/backtrader_app.py --server.port=8501 --server.address=0.0.0.0
 elif [ "$SERVICE_MODE" = "demo" ]; then
 	# Run both web and bot (bot optional)
 	set +e

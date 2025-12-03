@@ -12,7 +12,6 @@ discord.py
 python-dotenv
 joblib>=1.3.2
 psutil
-pandas_ta>=0.4.67b0            # Technical indicators library for feature engineering
 
 # ========== Kafka Integration (Phase 1) ==========
 confluent-kafka>=2.3.0         # Kafka Python client (C-based, high performance) - auto-installed: 2.12.2
@@ -23,9 +22,15 @@ ccxt>=4.2.0                    # Unified cryptocurrency exchange library
 # ========== Decision Engine & Trading (Phase 4) ==========
 backtrader>=1.9.78.123         # Trading framework for strategy implementation and backtesting
 
+# ========== Database & Authentication (Phase 5) ==========
+pymongo>=4.0.0                 # MongoDB driver for trade persistence
+bcrypt>=4.0.0                  # Password hashing for user authentication
+
 # ========== Dashboard & Visualization (Phase 5) ==========
-plotly==5.18.0                 # Interactive charts
-streamlit==1.28.0              # Real-time dashboard
+plotly>=5.18.0                 # Interactive charts
+streamlit>=1.28.0              # Real-time dashboard
+streamlit-autorefresh>=1.0.1   # Auto-refresh component for real-time updates
+pandas-ta>=0.4.67b0            # Technical indicators (moved from core for clarity)
 
 # ========== Testing ==========
 pytest==7.4.3
