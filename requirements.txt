@@ -1,0 +1,34 @@
+# ========== Core Dependencies ==========
+pymongo
+requests
+scikit-learn>=1.3.0
+numpy
+pandas
+flask
+schedule
+matplotlib
+seaborn
+discord.py
+python-dotenv
+joblib>=1.3.2
+psutil
+pandas_ta>=0.4.67b0            # Technical indicators library for feature engineering
+
+# ========== Kafka Integration (Phase 1) ==========
+confluent-kafka>=2.3.0         # Kafka Python client (C-based, high performance) - auto-installed: 2.12.2
+
+# ========== Crypto Exchange Integration (Phase 2) ==========
+ccxt>=4.2.0                    # Unified cryptocurrency exchange library
+
+# ========== Decision Engine & Trading (Phase 4) ==========
+backtrader>=1.9.78.123         # Trading framework for strategy implementation and backtesting
+
+# ========== Dashboard & Visualization (Phase 5) ==========
+plotly==5.18.0                 # Interactive charts
+streamlit==1.28.0              # Real-time dashboard
+
+# ========== Testing ==========
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# --- IGNORE ---
